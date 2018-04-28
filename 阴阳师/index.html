@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    *{margin:0;padding:0}
+    .banner{
+      height:585px;
+      background-image:url(banner.jpg);
+      background-size:100%;
+    }
+    .content{
+      width:1000px;
+      margin:0 auto;
+    }
+    .relative{
+      position:relative;
+      height:585px;
+    }
+    .left{
+      left:208px;
+      animation:lAnimation 1.2s .5s;
+    }
+    .right{
+      right:208px;
+      animation:rAnimation 1.2s .5s;
+    }
+    .banner-img{
+      position:absolute;
+      bottom:0;
+      opacity:0;
+      animation-fill-mode: forwards;
+    }
+    @keyframes lAnimation {
+        0%{}
+        100%{
+          left:50px;
+          opacity:1;
+        }
+    }
+    @keyframes rAnimation {
+        0%{}
+        100%{
+          right:50px;
+          opacity:1;
+        }
+    }
+    .top{
+      height:100px;
+      background-color:rgba(255,255,255,.7);
+      position:fixed;
+      width:100%;
+      line-height:100px;
+      top:0;
+      left:0;
+      z-index: 2;
+    }
+    .top a{
+      text-decoration:none;
+      color:#333;
+      font-size:16px;
+    }
+    body{font-family: "微软雅黑";}
+    li{list-style:none;}
+    .sec-nav{
+      width:100%;
+      position:absolute;
+      overflow:hidden;
+      top:100px;
+      left:0;
+      background-color:#e1ebeb;
+      height:0;
+      transition:all .5s .2s;
+    }
+    .top-content{height:100px;position:relative;}
+    .top li:hover .sec-nav{
+      height:200px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <div class="top-content">
+        <div class="content">
+          <ul>
+            <li>
+              <a href="#">游戏特色</a>
+              <div class="sec-nav">
+                  sdfdsafadsfsfsdf
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="banner">
+      <div class="content relative">
+        <img src="role1_6cb0cdd.png" class="banner-img left" alt="">
+        <img src="role2_a804294.png" class="banner-img right" alt="">
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{margin:0;padding:0;}
+		li{list-style:none;}
+		a{text-decoration: none;}
+		.adv{
+			width:840px;
+			margin:100px 0;
+			margin-left:400px;
+			position:relative;
+		}
+		.adv li{
+			display:none;
+		}
+		body{
+			background-image:url(images/bg.png);
+		}
+		.adv-nav{
+			margin-top:25px;
+			margin-left:450px;
+		}
+		.adv img{
+			width:100%;
+		}
+		.adv-nav span{
+			display:block;
+			float:left;
+			margin-right:5px;
+			background-color:#fff;
+			opacity: .3;
+			border-radius:3px;
+			width:15px;
+			height:9px;
+			cursor:pointer;
+		}
+		html,body{
+			padding-bottom:50px;
+		}
+		.adv-nav span.focus{
+			opacity: .7;
+		}
+		.prev,.next{
+			width:46px;
+			height:108px;
+			position:absolute;
+			top:45%;
+			right:-46px;
+			cursor:pointer;
+			background-image:linear-gradient( to right, rgba( 0, 0, 0, 0.3) 5%,rgba( 0, 0, 0, 0) 95%);
+		}
+		.prev:hover,.next:hover{
+			background-image:linear-gradient( to right, rgba( 255, 255, 255, 0.3) 5%,rgba( 0, 0, 0, 0) 95%);	
+		}
+		.prev{left:-46px;}
+		.next{right:-46px;}
+		.prev>div,.next>div{
+			margin:36px auto;
+			width:23px;
+			height:36px;
+			background-image:url(images/arrows.png);
+			background-repeat: no-repeat;
+		}
+		.prev>div{
+			background-position:-23px 50%;
+		}
+		.sec{
+			width:230px;
+			display: none;
+			height:250px;
+			padding:20px;
+			background-color:#e3e3e3;
+			position:absolute;
+			left:-270px;
+			top:0;
+			z-index:2;
+		}
+		.sec img{
+			width:100%;
+			display: none;
+		}
+		.clear{
+			clear:both;
+		}
+		.gameList .left{
+			float:left;
+		}
+		.gameList a{
+			color:#c7d5e0;
+		}
+		.gameList .content{
+			float:left;
+			margin-left:25px;
+		}
+		.gameWrap{
+			width:940px;
+		}
+		.gameList{
+			float:left;
+			width:618px;
+		}
+		.gameDetils{
+			float:right;
+			width:278px;
+			height:705px;
+			padding:15px;
+			background-color:#95bbd4;
+		}
+		.gameDetils img{width:100%;}
+		.gameList li{
+			background:rgba( 0, 0, 0, 0.5);
+			height: 69px;
+    		margin-bottom: 5px;
+		}
+		.gameList li.focus{
+			background-color:#95bbd4;
+			margin-right:-14px;
+		}
+		.gameList li.focus a{
+			color:#333;
+		}
+		.gameList .content{
+			width:400px;
+		}
+		.gameList .price{
+			float:right;
+			font-size:12px;
+		}
+		.gameList h2{
+			font-size: 16px;
+			font-weight:normal;
+			margin-top:5px;
+		}
+		.gameDetils h2{
+			color: #263645;
+			font-weight:normal;
+			font-size:21px;
+			font-family: "Motiva Sans", Sans-serif;
+			margin-bottom:5px;
+			width:100%;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow:hidden;
+		}
+		.gameWrap{margin-left:200px;}
+	</style>
+	<script src="jquery.min.js"></script>
+</head>
+<body>
+	<div class="adv">
+		<ul>
+			<li class="focus" style="display:block;">
+				<img src="images/1.jpg" alt="">
+				<div class="sec">
+					<h4>Human: Fall Flat</h4>
+					<div class="hover_release"> 发行于: 2016年7月22日 </div>
+					<img style="display:block;" src="images/1-1.jpg" alt="">
+					<img src="images/1-2.jpg" alt="">
+					<img src="images/1-3.jpg" alt="">
+					<img src="images/1-4.jpg" alt="">
+				</div>
+			</li>
+			<li>
+				<img src="images/2.jpg" alt="">
+				<div class="sec">
+					<h4>Zombie Army Trilogy</h4>
+					<div class="hover_release"> 发行于: 2016年7月22日 </div>
+					<img style="display:block;" src="images/2-1.jpg" alt="">
+					<img src="images/2-2.jpg" alt="">
+					<img src="images/2-3.jpg" alt="">
+					<img src="images/2-4.jpg" alt="">
+				</div>
+			</li>
+			<li><img src="images/3.jpg" alt=""></li>
+			<li><img src="images/4.jpg" alt=""></li>
+			<li><img src="images/5.jpg" alt=""></li>
+			<li><img src="images/6.jpg" alt=""></li>
+		</ul>
+		<div class="adv-nav">
+		</div>
+		<div class="prev"><div></div></div>
+		<div class="next"><div></div></div>
+		<div class="clear"></div>
+	</div>
+
+	<div class="adv">
+		<ul>
+			<li class="focus" style="display:block;"><img src="images/1.jpg" alt=""></li>
+			<li><img src="images/2.jpg" alt=""></li>
+			<li><img src="images/3.jpg" alt=""></li>
+			<li><img src="images/4.jpg" alt=""></li>
+		</ul>
+		<div class="adv-nav">
+		</div>
+		<div class="prev"><div></div></div>
+		<div class="next"><div></div></div>
+		<div class="clear"></div>
+	</div>
+	
+	<div class="gameWrap">
+		<ul class="gameList">
+			<li class="focus">
+				<a href="#">
+					<img class='left' src="images/capsule_184x69.jpg" alt="">
+					<div class="content">
+						<h2>Hunt Down The Freeman</h2>
+						<span class="price">¥68</span>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img class='left' src="images/capsule_184x69 (1).jpg" alt="">
+					<div class="content">
+						<h2>Sword Art Online: Fatal Bullet - Season Pass</h2>
+						<span class="price">¥188</span>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img class='left' src="images/capsule_184x69 (2).jpg" alt="">
+					<div class="content">
+						<h2>Hunt Down The Freeman</h2>
+						<span class="price">¥278</span>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img class='left' src="images/capsule_184x69 (3).jpg" alt="">
+					<div class="content">
+						<h2>Fallen ~Makina and the City of Ruins~</h2>
+						<span class="price">¥33</span>
+					</div>
+				</a>
+			</li>
+		</ul>
+		<div class="gameDetils">
+			<ul class="content">
+				<li class="focus">
+					<h2>Hunt Down The FreemanSADSADSADSADSAD</h2>
+					<img src="images/ss_86f0ebb505ce0d1e3fb28c3ce450c9a94ef06437.600x338.jpg" alt="">
+					<img src="images/ss_2564a295f658eebe98dd03bcd1ff96bf0a0eb677.600x338.jpg" alt="">
+					<img src="images/ss_72260b7ffa92d8aa0cc9f11feeb63b55375b044e.600x338.jpg" alt="">
+					<img src="images/ss_ece6bddb3c0c97453f19f4a73c1fa5c08d6d7b9b.600x338.jpg" alt="">
+				</li>
+
+				<li>
+					<h2>Sword Art Online: Fatal Bullet - Season Pass</h2>
+					<img src="images/ss_86f0ebb505ce0d1e3fb28c3ce450c9a94ef06437.600x338.jpg" alt="">
+					<img src="images/ss_2564a295f658eebe98dd03bcd1ff96bf0a0eb677.600x338.jpg" alt="">
+					<img src="images/ss_72260b7ffa92d8aa0cc9f11feeb63b55375b044e.600x338.jpg" alt="">
+					<img src="images/ss_ece6bddb3c0c97453f19f4a73c1fa5c08d6d7b9b.600x338.jpg" alt="">
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<script>
+		// 初始化索引值
+		for(var i = 0; i <$(".adv").length;i++){
+			var $liList = $(".adv").eq(i).find("li");
+			var $spanList = $(".adv").eq(i).find(".adv-nav").find("span");
+			for(var j = 0; j < $liList.length; j++){
+				$liList.eq(j).attr("index",j)
+			}
+			for(var j = 0; j < $spanList.length; j++){
+				$spanList.eq(j).attr("index",j)
+			}
+		}
+
+		// 自动生成小圆点
+		for(var i = 0; i < $(".adv").length;i++){
+			var count = $(".adv").eq(i).find("li").length;
+			for(var j = 0; j < count;j++){
+				var $obj = $("<span></span>")
+				$obj.appendTo($(".adv-nav").eq(i))
+				if(j == 0){
+					$obj.addClass("focus")
+				}
+			}
+		}
+
+		$(".adv li").mouseenter(function(){
+			$(this).find(".sec").fadeIn();
+			var $imgList = $(this).find(".sec img")
+			var n = 0;
+			secAuto = setInterval(function(){
+				if(n < $imgList.length - 1){
+					n++
+				}
+				else{
+					n = 0;
+				}
+				$imgList.hide();
+				$imgList.eq(n).fadeIn();
+			},3000)
+		}).mouseleave(function(){
+			$(this).find(".sec").fadeOut();
+			clearInterval(secAuto); 
+		})
+
+
+		function changeImg(index,obj){
+			var $navList = $(obj).closest(".adv").find('.adv-nav').find("span");
+			// 隐藏所有的图片
+			$liList.hide();
+			$liList.removeClass("focus");
+			$navList.removeClass("focus");
+			$liList.eq(index).addClass("focus")
+			$liList.eq(index).fadeIn();
+			$navList.eq(index).addClass("focus")
+		}
+
+		$(".next").click(function(){
+			$liList = $(this).closest(".adv").find("li");
+			for(var i = 0; i < $liList.length; i++){
+				if($liList.eq(i).hasClass("focus")){
+					if(i < $liList.length - 1){
+						changeImg(i+1,this)
+					}
+					else{
+						changeImg(0,this)
+					}
+					break;
+				}
+			}
+		})
+
+		$(".prev").click(function(){
+			$liList = $(this).closest(".adv").find("li");
+			for(var i = 0; i < $liList.length; i++){
+				if($liList.eq(i).hasClass("focus")){
+					if(i !== 0){
+						changeImg(i-1,this)
+					}
+					else{
+						changeImg($liList.length - 1,this)
+					}
+					break;
+				}
+			}
+		})
+
+		$(".adv-nav span").click(function(){
+			$liList = $(this).closest(".adv").find("li");
+			var n = this.getAttribute("index");
+			for(var i = 0; i < $liList.length; i++){
+				if($liList.eq(i).hasClass("focus")){
+					changeImg(n,this)
+					break;
+				}
+			}
+		})
+
+		function auto(){
+			$liList = $(".adv").eq(0).find("li");
+			for(var i = 0; i < $liList.length; i++){
+				if($liList.eq(i).hasClass("focus")){
+					if(i < $liList.length - 1){
+						changeImg(i+1,$(".adv").eq(0).find(".next"))
+					}
+					else{
+						changeImg(0,$(".adv").eq(0).find(".next"))
+					}
+					break;
+				}
+			}
+		}
+
+		var autoPlay = setInterval(function(){
+			auto()
+		},5000)
+		$(".adv").eq(0).mouseenter(function(){
+			clearInterval(autoPlay)
+		})
+
+		$(".adv").eq(0).mouseleave(function(){
+			autoPlay = setInterval(function(){
+				auto();
+			},5000)
+		})
+
+		$(".gameList li").mouseenter(function(){
+			if(!$(this).hasClass("focus")){
+				var n = $(this).index();
+				$(".gameDetils .focus").fadeOut(function(){
+					$(".gameDetils li").eq(n).fadeIn();
+				});
+
+				$(".gameList li").removeClass("focus")
+				$(".gameDetils li").removeClass("focus")
+				$(this).addClass("focus")
+				$(".gameDetils li").eq(n).addClass("focus")
+			}
+		})
+	</script>
+</body>
+</html>
